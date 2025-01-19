@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/drvic10k/bootstrap-sortable/ff650fd1/Contents/bootstrap-sortable.css">
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/drvic10k/bootstrap-sortable/ff650fd1/Scripts/bootstrap-sortable.js"></script>
+    <script src="https://cdn.rawgit.com/drvic10k/bootstrap-sortable/ff650fd1/Scripts/moment.min.js"></script>
+    <style>
+      body {font-family: Arial, Helvetica, sans-serif;}
+
+      .thumbImg {
+        width: 100%;
+        max-width: 35px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-bottom: 5px;
+        border-width: 1px;
+        border-color: #f1f1f1;
+        border-style: solid;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.7);
+      }
+
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+      }
+
+      .closeModal {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .closeModal:hover,
+      .closeModal:focus {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myModal" class="modal">
+      <span class="closeModal">&times;</span>
+      <img class="modal-content" id="modelImage">
+    </div>
+    <div class="container">
+
+      <h1 class="text-primary">TestCafe Test Summary</h1>
+      <div class="client-logo" style="padding:15px"></div>
+      <div class="bg-primary" style="padding:15px;box-shadow: 6px 6px 6px 6px #00000033;border-radius: 10px;">
+        <h3>Summary</h3><br>
+        <p class="lead">Start Time: Sun Jan 19 2025 16:25:42 GMT-0600 (Central Standard Time)</p>
+        <p class="lead">Browsers: Chrome 132.0.0.0 / Windows 10</p>
+        <p class="lead">Duration: 23s</p>
+        <p class="lead">Tests Failed: 1 out of 7</p>
+        <p class="lead">Tests Skipped: 0</p>
+      </div><br>
+      <table class="table sortable" style="padding:15px;box-shadow: 6px 6px 6px 6px #00000033;border-radius: 10px;">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Fixture</th>
+            <th>Test Name</th>
+            <th>Browsers</th>
+            <th>Duration</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+           <tr class="success">
+  <td>1</td>
+  <td>Device Management Tests</td>
+  <td>TEST_001.0001 - Verify each device is displayed correctly</td>
+  <td>Chrome 132.0.0.0 / Windows 10</td>
+  <td>3s</td>
+  <td>passed</td>
+ </tr>
+ <tr class="success">
+  <td>2</td>
+  <td>Device Management Tests</td>
+  <td>TEST_001.0002 - Verify each device has Edit and Delete buttons</td>
+  <td>Chrome 132.0.0.0 / Windows 10</td>
+  <td>2s</td>
+  <td>passed</td>
+ </tr>
+ <tr class="success">
+  <td>3</td>
+  <td>Device Management Tests</td>
+  <td>[BUG:002] TEST_002 - Verify device creation for ZELDA-PC and correct display in the UI.</td>
+  <td>Chrome 132.0.0.0 / Windows 10</td>
+  <td>3s</td>
+  <td>passed</td>
+ </tr>
+ <tr class="danger">
+  <td>4</td>
+  <td>Device Management Tests</td>
+  <td>[BUG:002] TEST_002 - Verify device creation for LINK-LAPTOP and correct display in the UI.</td>
+  <td>Chrome 132.0.0.0 / Windows 10</td>
+  <td>7s</td>
+  <td><a href="#test-4">failed</a></td>
+ </tr>
+ <tr class="success">
+  <td>5</td>
+  <td>Device Management Tests</td>
+  <td>[BUG:002] TEST_002 - Verify device creation for GORON-MAC and correct display in the UI.</td>
+  <td>Chrome 132.0.0.0 / Windows 10</td>
+  <td>2s</td>
+  <td>passed</td>
+ </tr>
+ <tr class="success">
+  <td>6</td>
+  <td>Device Management Tests</td>
+  <td>TEST_003 - Rename the first device and verify the change</td>
+  <td>Chrome 132.0.0.0 / Windows 10</td>
+  <td>1s</td>
+  <td>passed</td>
+ </tr>
+ <tr class="success">
+  <td>7</td>
+  <td>Device Management Tests</td>
+  <td>TEST_004 - Delete the last device and verify it is removed from the UI</td>
+  <td>Chrome 132.0.0.0 / Windows 10</td>
+  <td>1s</td>
+  <td>passed</td>
+ </tr>
+
+        </tbody>
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+      </table>
+      <br>
+      <h3>Error Details</h3>
+       <h4 id="test-4" style="color: red;">4. Device Management Tests - [BUG:002] TEST_002 - Verify device creation for LINK-LAPTOP and correct display in the UI.</h4>
+ <pre style="padding:15px;box-shadow: 6px 6px 6px 6px #00000033;border-radius: 10px;">AssertionError: Device type &quot;WINDOWS SERVER&quot; is not visible: expected false to be truthy
+
+Browser: Chrome 132.0.0.0 / Windows 10
+
+   108 |        const deviceCapacity = homePage.deviceCapacityLabel.withText(device.hdd_capacity);
+   109 |
+   110 |        // Assertions to ensure the device is visible with correct details
+   111 |        await t
+   112 |            .expect(deviceName.exists).ok(`Device name &quot;$&#123device.system_name&#125&quot; is not visible`)
+ &gt; 113 |            .expect(deviceType.exists).ok(`Device type &quot;${device.type}&quot; is not visible`)
+   114 |            .expect(deviceCapacity.exists).ok(`Device capacity &quot;${device.hdd_capacity}&quot; is not visible`);
+   115 |    });
+   116 |});
+   117 |
+   118 |test(&#39;TEST_003 - Rename the first device and verify the change&#39;, async t =&gt; {
+
+   at &lt;anonymous&gt; (C:\Users\Katy\Documents\The Legend Of Zelda\fixtures\device-management-tests.js:113:40)
+   at asyncGeneratorStep (C:\Users\Katy\Documents\The Legend Of Zelda\fixtures\device-management-tests.js:4:56)
+   at _next (C:\Users\Katy\Documents\The Legend Of Zelda\fixtures\device-management-tests.js:4:56) </pre><br>
+    </div>
+    <script>
+      const modal = document.getElementById('myModal');
+      const modalImage = document.getElementById("modelImage");
+
+      Array.from(document.getElementsByClassName("thumbImg")).forEach(function(el) {
+        el.onclick = function() {
+          modal.style.display = "block";
+          modalImage.src = this.src;
+        }
+      });
+
+      document.getElementsByClassName("closeModal")[0].onclick = function() {
+        modal.style.display = "none";
+      }
+    </script>
+  </body>
+  <br>
+</html>

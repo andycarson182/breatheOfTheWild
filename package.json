@@ -1,0 +1,16 @@
+{
+  "name": "breathe-of-the-wild-suite",
+  "version": "1.0.0",
+  "description": "This repository contains the front-end and API automation test suite for Ninja RMM, implemented using TestCafe & Axios.",
+  "main": "index.js",
+  "scripts": {
+    "tests:chrome": "testcafe chrome fixtures/device-management-tests.js --reporter html:reports/htmlReports/testReport.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "testcafe": "^3.7.1",
+    "testcafe-reporter-html": "^1.4.6"
+  }
+}
