@@ -1,0 +1,17 @@
+[
+    {
+        "system_name": "ZELDA-PC",
+        "type": "WINDOWS WORKSTATION",
+        "hdd_capacity": "1024"
+    },
+    {
+        "system_name": "LINK-LAPTOP",
+        "type": "WINDOWS SERVER",
+        "hdd_capacity": "182"
+    },
+    {
+        "system_name": "GORON-MAC",
+        "type": "MAC",
+        "hdd_capacity": "666"
+    }
+]
