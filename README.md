@@ -1,8 +1,6 @@
 # Breathe Of the Wild Suite
 ### Ninja Front-End & API Test Suite
 
-![image](https://github.com/user-attachments/assets/754e1589-e81f-45f7-8b32-96fdab00f48b)
-
 This repository contains the front-end and API automation test suite for Ninja RMM, implemented using TestCafe & Axios.
 
 ## Setup & Installation
