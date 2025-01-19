@@ -1,6 +1,8 @@
 # Breathe Of the Wild Suite
 ### Ninja Front-End & API Test Suite
 
+![image](https://github.com/user-attachments/assets/754e1589-e81f-45f7-8b32-96fdab00f48b)
+
 This repository contains the front-end and API automation test suite for Ninja RMM, implemented using TestCafe & Axios.
 
 ## Setup & Installation
@@ -27,3 +29,5 @@ This repository contains the front-end and API automation test suite for Ninja R
 #### 2. Generating TestCafe Test Summary:
 - The TestCafe Test Summary based on test results, its automatically generated when user runs `npm run tests:chrome` the results are generated in the following directory path:
 `reports/html reports`
+
+![image](https://github.com/user-attachments/assets/3d9414c1-f7a3-4caf-98d7-1a7ee6c49012)
