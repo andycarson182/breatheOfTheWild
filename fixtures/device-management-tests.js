@@ -8,7 +8,7 @@ const deviceCreatePage = new DeviceCreatePage();
 const httpRequest = new HttpRequest();
 
 fixture('Device Management Tests')
-    .page('http://localhost:3002/') // Make sure your app is running on this port
+    .page('http://localhost:3001/') // Make sure your app is running on this port
     .afterEach(async () => {
             await httpRequest.resetDevicesFromJson();
     });
