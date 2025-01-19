@@ -28,4 +28,9 @@ This repository contains the front-end and API automation test suite for Ninja R
 - The TestCafe Test Summary based on test results, its automatically generated when user runs `npm run tests:chrome` the results are generated in the following directory path:
 `reports/html reports`
 
+#### 3. For Running the Ninja App you will need to execute the followign projects on your local machine:
+
+- UI: https://github.com/Yastrenky/devices-clientapp 
+- Server: https://github.com/NinjaRMM/devicesTask_serverApp
+
 ![image](https://github.com/user-attachments/assets/3d9414c1-f7a3-4caf-98d7-1a7ee6c49012)
