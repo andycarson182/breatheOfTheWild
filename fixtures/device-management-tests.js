@@ -10,13 +10,7 @@ const httpRequest = new HttpRequest();
 fixture('Device Management Tests')
     .page('http://localhost:3002/') // Make sure your app is running on this port
     .afterEach(async () => {
-        // Reset original devices to use the original data
-        httpRequest.resetDevicesFromJson().then(() => {
-            console.log('Devices reset and restored successfully!');
-        })
-            .catch((error) => {
-                console.error('Error resetting devices:', error);
-            });
+            await httpRequest.resetDevicesFromJson();
     });
 
 test('TEST_001.0001 - Verify each device is displayed correctly', async t => {

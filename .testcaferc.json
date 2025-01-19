@@ -7,5 +7,5 @@
     "quarantineMode": false,
     "pageRequestTimeout": 40000,
     "retryTestPages": true,
-    "retryTestCount": 1
+    "retryTestCount": 2
 }

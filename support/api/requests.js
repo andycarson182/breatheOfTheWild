@@ -55,12 +55,14 @@ export class HttpRequest {
                 await this.deleteRequest(device.id);
                 // console.log(`Device ${device.system_name} deleted.`);
             }
+    
             // Restore the original devices from the JSON data
-            const devices = data;  // 'data' is already an array of device objects
+            const devices = data; // 'data' is already an array of device objects
             for (let device of devices) {
                 await this.postDeviceRequest(device.system_name, device.type, device.hdd_capacity);
                 // console.log(`Device ${device.system_name} created.`);
             }
+            console.log('Devices reset and restored successfully!');
         } catch (error) {
             console.error('Error resetting devices from JSON:', error);
             throw error;
