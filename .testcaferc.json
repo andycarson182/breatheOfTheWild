@@ -1,11 +1,12 @@
 {
     "skipJsErrors": true,
     "debugMode": false,
-    "selectorTimeout": 30000,
+    "selectorTimeout": 5000,
+    "assertionTimeout": 3000,
     "port1": 3001,
     "hostname": "localhost",
     "quarantineMode": false,
     "pageRequestTimeout": 40000,
     "retryTestPages": true,
-    "retryTestCount": 2
+    "retryTestCount": 1
 }
