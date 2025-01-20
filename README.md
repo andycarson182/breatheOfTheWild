@@ -36,5 +36,7 @@ npm run tests:chrome
 #### 3. Generating TestCafe Test Summary:
 - The TestCafe Test Summary based on test results, its automatically generated when user runs `npm run tests:chrome`
 - The results are generated in the following directory path: `reports/html reports`
+![image](https://github.com/user-attachments/assets/f5974d9d-5818-4080-9c10-240b1e76168a)
 
+---
 ![image](https://github.com/user-attachments/assets/3d9414c1-f7a3-4caf-98d7-1a7ee6c49012)
