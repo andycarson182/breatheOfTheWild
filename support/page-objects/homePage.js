@@ -10,10 +10,6 @@ export class HomePage {
         this.addDeviceButton = Selector('a.submitButton');
     }
 
-    async reloadPage(t){
-        await t.eval(() => location.reload()); 
-    }
-
     async clickAddDeviceButton(t) {
         await t.expect(this.addDeviceButton.visible).ok('Add Device button is not visible');
         await t.click(this.addDeviceButton);
