@@ -28,8 +28,19 @@ test('TEST_001.0001 - Verify each device is displayed correctly', async t => {
     const deviceTypeElements = homePage.deviceTypeLabel;
     const deviceCapacityElements = homePage.deviceCapacityLabel;
 
+      // Wait for UI elements to load
+      let retries = 5;
+      while (retries > 0) {
+          const deviceCount = await deviceNameElements.count;
+          if (deviceCount > 0) break;
+          await t.wait(1000); // Wait 1 second before retrying
+          retries--;
+      }
+      await t.expect(deviceNameElements.count).gt(0, 'Device elements did not load in time.');
+
     // Get the number of device elements
     const deviceCount = await deviceNameElements.count;
+    await t.expect(deviceCount).eql(response.length, 'The number of devices in the UI does not match the API response');
 
     // Loop through each element and retrieve its text
     for (let i = 0; i < deviceCount; i++) {
@@ -51,12 +62,10 @@ test('TEST_001.0001 - Verify each device is displayed correctly', async t => {
         const apiDeviceType = device.type.trim().toLowerCase();
         const apiDeviceCapacity = device.hdd_capacity.trim().toLowerCase();
 
+        // Ensure that the device name, type, and capacity exists in the UI device names
         await t
-            // Ensure that the device name exists in the UI device names
             .expect(uiDeviceNames.includes(apiDeviceName)).ok(`Device name for ${device.system_name} is not found in UI`)
-            // Ensure that the device type exists in the UI device types
             .expect(uiDeviceTypes.includes(apiDeviceType)).ok(`Device type for ${device.type} is not found in UI`)
-            // Ensure that the device capacity exists in the UI device capacities
             .expect(uiDeviceCapacities.includes(apiDeviceCapacity)).ok(`Device capacity for ${device.had_capacity} is not found in UI`);
     }
 });
@@ -70,7 +79,15 @@ test('TEST_001.0002 - Verify each device has Edit and Delete buttons', async t =
     const deviceNameElements = homePage.deviceNameLabel;
     const deviceEditButtons = homePage.deviceEditButton;
     const deviceRemoveButtons = homePage.deviceRemoveButton;
-
+  // Wait for UI elements to load
+    let retries = 5;
+    while (retries > 0) {
+        const deviceCount = await deviceNameElements.count;
+        if (deviceCount > 0) break;
+        await t.wait(1000); // Wait 1 second before retrying
+        retries--;
+    }
+    await t.expect(deviceNameElements.count).gt(0, 'Device elements did not load in time.');
     // Get the number of device elements
     const deviceCount = await deviceNameElements.count;
     await t.expect(deviceCount).eql(response.length, 'The number of devices in the UI does not match the API response');
